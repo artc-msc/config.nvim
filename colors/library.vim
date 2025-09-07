@@ -343,7 +343,7 @@ hi zettelCommentary1		guifg=#ff7f50	gui=bold
 hi zettelCommentary2		guifg=#18be66	gui=bold 
 hi zettelCommentary3		guifg=#4e9a06	gui=bold 
 hi zettelCommentary4		guifg=#aa00aa	gui=bold 
-hi zettelTodo			guifg=#000000	guibg=#ffff00	gui=bold
+hi zettelTodo			guifg=#000000	guibg=#c4a000	gui=bold
 hi zettelFootnote		guifg=#ff7f50
 hi zettelFootnoteDefinition	guifg=#ff7f50
 
