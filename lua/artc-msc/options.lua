@@ -27,7 +27,7 @@ o.relativenumber = true
 
 -- TABS
 -- Set tab to 4 spaces
--- o.tabstop = 4
+o.tabstop = 4
 -- o.softtabstop = 4
 -- o.et = true
 
