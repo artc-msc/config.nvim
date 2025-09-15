@@ -327,7 +327,7 @@ hi zettelIdDeclaration		guifg=#00ff00
 "hi zettelIdDelimiter		guifg=#00bfa5
 hi zettelItalic					gui=italic
 "hi zettelLinkDelimiter		guifg=#00bfa5
-hi zettelLinkText		guifg=#80a0ff	gui=underline
+hi zettelLinkText		guifg=#80a0ff	
 "hi zettelLinkTextDelimiter	guifg=#00bfa5
 hi zettelListMarker		guifg=#c4a000	gui=bold
 hi zettelOrderedListMarker	guifg=#c4a000	gui=bold
