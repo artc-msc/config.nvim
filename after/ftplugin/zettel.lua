@@ -1,4 +1,4 @@
-vim.cmd [[set path=.,~/3_Personal/Archive/Zettelkasten/,~/3_Personal/Archive/Zettelkasten/Hypomnema/,~/3_Personal/Archive/Zettelkasten/Devotional/,~/3_Personal/Archive/Zettelkasten/Sententiae/,~/3_Personal/Archive/Zettelkasten/Commentarii/,~/3_Personal/Archive/Zettelkasten/Enchiridion/,~/3_Personal/Archive/Zettelkasten/Florilegium/,~/3_Personal/Archive/Zettelkasten/Zettelkasten/,~/3_Personal/Archive/Zettelkasten/Bibliography/]]
+vim.cmd [[set path=.,~/3_Personal/Archive/Zettelkasten/,~/3_Personal/Archive/Hypomnema/,~/3_Personal/Archive/Florilegium/,~/3_Personal/Archive/Bibliography/]]
 
 local o = vim.o
 
