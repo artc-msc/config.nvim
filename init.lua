@@ -27,6 +27,7 @@ require("treesitter-setup")
 require("cmp-setup")
 require("nvim-tree-setup")
 require("nvim-tree-preview-setup")
+--require("float-preview")
 --
 --local vim = vim
 -- local Plug = vim.fn['plug#']
