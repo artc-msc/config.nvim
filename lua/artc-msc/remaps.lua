@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 --local map = vim.api.nvim_set_keymap
 local map = vim.keymap.set
+local preview = require("float-preview")
 
 --FUNCTION KEYS
 map("n", "<F2>", ":lua FoldColumnToggle()<CR>", opts)
@@ -18,7 +19,7 @@ map("n", "<F12>", ":set omnifunc=ztcomplete#CompleteHT", opts)
 --map("n", "<leader>s", "lua vim.cmd.source $MYVIMRC<CR>", opts)
 --map("n", "<leader>c", ":split /home/noisefrk900/.vim/colors/library.vim<CR>", opts)
 map("n", "<leader>b", ":split /home/noisefrk900/.bashrc<CR>", opts)
-map("n", "<leader>f", ":split /home/noisefrk900/.config/fish/config.fish<CR>", opts)
+--map("n", "<leader>f", ":split /home/noisefrk900/.config/fish/config.fish<CR>", opts)
 --keymap("n", "<leader>#", ":execute leftabove sp ".bufname("#")<CR>", opts)
 map("n", "<leader>x", "**", opts)
 map("n", "<leader>*", ":noh<CR>", opts)
@@ -77,22 +78,25 @@ map("n", "j", "gj", opts)
 map("n", "k", "gk", opts)
 --keymap("n", ; :", opts)
 -- Keymaps for better default experience
--- See `:help vim.keymap.set()`
---vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+-- See `:help map()`
+--map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+map("n", "<leader>f", preview.toggle_preview, { desc = "Toggle file preview" })
 
 -- Remap for dealing with word wrap
--- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
--- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
+-- map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+--
+--
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 
 --local ft = pfiletype.detect(filepath)
---vim.keymap.set('n', 'j', "&ft == 'netrw' ? 'j<cr>' : 'j'", opts )
+--map('n', 'j', "&ft == 'netrw' ? 'j<cr>' : 'j'", opts )
 --
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -107,10 +111,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 local treeutils = require("treeutils")
 
-vim.keymap.set('n', '<c-f>', treeutils.launch_find_files, opts)
-vim.keymap.set('n', '<c-g>', treeutils.launch_live_grep,  opts)
+map('n', '<c-f>', treeutils.launch_find_files, opts)
+map('n', '<c-g>', treeutils.launch_live_grep,  opts)
 
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -118,13 +122,13 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
