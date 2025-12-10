@@ -1,4 +1,4 @@
-vim.cmd [[set path=.,~/3_Personal/Archive/Zettelkasten/,~/3_Personal/Archive/Hypomnema/,~/3_Personal/Archive/Florilegium/,~/3_Personal/Archive/Bibliography/]]
+vim.cmd [[set path=.,~/02_Projects/Repositories/artc-msc/archive/zettelkasten/,~/02_Projects/Repositories/artc-msc/archive/reference/]]
 
 local o = vim.o
 
