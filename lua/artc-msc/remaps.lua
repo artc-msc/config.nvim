@@ -1,9 +1,9 @@
 local opts = { noremap = true, silent = true }
---local map = vim.api.nvim_set_keymap
 local map = vim.keymap.set
 local preview = require("float-preview")
 
 --FUNCTION KEYS
+--map("n", "<F1>", "RESERVED FOR HELP", opts)
 map("n", "<F2>", ":lua FoldColumnToggle()<CR>", opts)
 map("n", "<F3>", ":set number! relativenumber!<CR>", opts)
 map("n", "<F4>", ":lua StatuslineToggle()<CR>", opts)
@@ -13,81 +13,36 @@ map("n", "<F7>", ":lua ListcharToggle()<CR>", opts)
 map("n", "<F8>", ":IBLToggle<CR>", opts)
 map("n", "<F9>", ":set scrollbind!<CR>", opts)
 map("n", "<F10>", ":execute terminal<CR>j", opts)
-map("n", "<F12>", ":set omnifunc=ztcomplete#CompleteHT", opts)
+map("n", "<F12>", "<Nop>", opts)
 
---keymap("n", "<leader>v", ":split $MYVIMRC<CR>", opts)
---map("n", "<leader>s", "lua vim.cmd.source $MYVIMRC<CR>", opts)
---map("n", "<leader>c", ":split /home/noisefrk900/.vim/colors/library.vim<CR>", opts)
 map("n", "<leader>b", ":split /home/noisefrk900/.bashrc<CR>", opts)
---map("n", "<leader>f", ":split /home/noisefrk900/.config/fish/config.fish<CR>", opts)
---keymap("n", "<leader>#", ":execute leftabove sp ".bufname("#")<CR>", opts)
 map("n", "<leader>x", "**", opts)
 map("n", "<leader>*", ":noh<CR>", opts)
-map({"n","i", "v"}, "<c-[>", "<ESC>", opts)
 map({"n","i", "v"}, "<leader>;", "<ESC>", opts)
-
---window navigation
-map("n", "<localleader>h", "<C-w>h", opts)
-map("n", "<localleader>j", "<C-w>j", opts)
-map("n", "<localleader>k", "<C-w>k", opts)
-map("n", "<localleader>l", "<C-w>l", opts)
---map("n", "<localleader>s", ":w<CR><ESC>", opts)
---map("n", "<localleader>q", ":q<CR><ESC>", opts)
---map("n", "<localleader>d", ":bd<CR><ESC>", opts)
-map("i", "<localleader>`", "<ESC>", opts)
-
---keymap("n", "j", "j", opts)
---keymap("n", "k", "k" ,opts)
 
 map("n", "<leader>/", "/\v", opts)
 map("n", "<leader>o", "o<esc>", opts)
 map("n", "<leader>O", "O<esc>", opts)
--- I used this binding for ESC
---map("n", "<leader>z", ":cnext<CR>", opts)
---map("n", "<leader>a", ":cprevious<CR>", opts)
---dup to diagnotic mapping
---keymap("n", "<leader>q", ":call QuickfixToggle()<CR>", opts)
-map("n", "<leader>N", ":lua TreeToggle()<CR>", opts)
-map("n", "<leader>n", ":lua vim.cmd('NERDTreeToggle')<CR>",opts)
---keymap("n", "<leader>n", ":NERDTree<CR><C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><", opts)
 
 map("n", "<leader>t", ":colo library<CR>", opts)
 map("n", "<leader>ww", ":call ColorGen()<CR>", opts)
 map("n", "<leader>d", ":Inspect<CR>", opts)
 
-
---keymap("n", "<localleader>s", "iNoiseFrk900 <NoiseFreak900@gmail.com>", opts)
---keymap("n", "<localleader>g", "ihttps://github.com/noisefrk900/REPO.git", opts)
---keymap("i", "<localleader>b", "{", opts)
---keymap("i", "<localleader>v", "}", opts)
---keymap("i", "<localleader><S-b>", "[", opts)
---keymap("i", "<localleader><S-v>", "]", opts)
---keymap("n", "<localleader>q", "jBi<CR>.<space><esc>0", opts)
---keymap("n", "<localleader>e", "ggfEdiWx", opts)
---keymap("n", "<localleader>w", ":w<CR><esc>", opts)
---keymap("n", "<localleader>z", "<C-w><", opts)
---keymap("n", "<localleader>a", "<C-w>>", opts)
-
-
 --MISC MAPPINGS
 map("i", "<C-f>", "<C-x><C-o>", opts)
 map("n", "<C-f>", "i<C-x><C-o>", opts)
 map("n", "<space>", "za", opts)
---map({'n', 'v', 'i'}, "<tab>", "<C-v><tab>", opts)
 map("n", "j", "gj", opts)
 map("n", "k", "gk", opts)
---keymap("n", ; :", opts)
 -- Keymaps for better default experience
 -- See `:help map()`
---map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 map("n", "<leader>f", preview.toggle_preview, { desc = "Toggle file preview" })
 
 -- Remap for dealing with word wrap
 -- map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 -- map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
---
---
+
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
