@@ -71,7 +71,7 @@ syn match zettelBlockquote ">\%(\s\|$\)" contained nextgroup=@zettelBlock
 "syn region zettelCodeBlock start="    \|\t" end="$" contained
 
 " TODO: real nesting
-syn match zettelListMarker "\%(\t\| \{0,4\}\)[-*+]\%(\s\+\S\)\@=" contained
+syn match zettelListMarker "\%(\t\{0,7}\| \{0,4\}\)[-*+]\%(\s\+\S\)\@=" contained
 syn match zettelOrderedListMarker "\%(\t\| \{0,4}\)\<\d\+\.\%(\s\+\S\)\@=" contained
 
 syn match zettelRule "\* *\* *\*[ *]*$" contained
