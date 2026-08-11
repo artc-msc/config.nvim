@@ -22,7 +22,7 @@ o.termguicolors = true
 
 -- LINE NUMBERS
 -- *Enable relative line numbers
-o.number = true
+o.number = false
 o.relativenumber = true
 
 -- TABS

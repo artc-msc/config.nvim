@@ -33,10 +33,10 @@ require('nvim-tree-preview').setup {
     ['<C-v>'] = { open = 'vertical' },
     ['<C-x>'] = { open = 'horizontal' },
   },
-  min_width = 10,
-  min_height = 5,
-  max_width = 90,
-  max_height = 25,
+  min_width = 87,
+  min_height = 28, 
+  max_width = 87,
+  max_height = 28,
   wrap = false, -- Whether to wrap lines in the preview window
   border = 'rounded', -- Border style for the preview window
   zindex = 100, -- Stacking order. Increase if the preview window is shown below other windows.

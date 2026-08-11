@@ -1,4 +1,5 @@
 require('nvim-tree').setup {
+  view = {width = 20},
   on_attach = function(bufnr)
     local api = require('nvim-tree.api')
 
